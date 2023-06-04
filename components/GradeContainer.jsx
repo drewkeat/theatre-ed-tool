@@ -15,7 +15,7 @@ const gradeStyles = {
 export default function GradeContainer({grade, standards}) {
   const listStandards = () =>{
     return _.map(standards, (standard) => (
-      <StandardCard key={standard.id} {...standard} />
+      <StandardCard key={standard.id} standard={standard} />
     ))};
 
   return (
