@@ -29,8 +29,5 @@ export function getServerSideProps(context){
   const standardsPath = path.join(process.cwd(), "standards.json");
   const standards = JSON.parse(fs.readFileSync(standardsPath));
   const standard = standards[standardId];
-  console.log(standard)
-  // const standard = standards.find(standardId)
-  // console.log(context.params)
   return ({props: {standard}})
 }

@@ -76,7 +76,7 @@ export default function Home({ standards }) {
             options={_.uniq(
               _.map(standards, (standard) => standard.domain)
             )}
-            chipValues={...formState.domain}
+            chipValues={formState.domain}
             setChipValues={(newValue) => {
               setFormState({...formState, domain: newValue})
               return newValue
@@ -89,7 +89,7 @@ export default function Home({ standards }) {
             options={_.uniq(
               _.map(standards, (standard) => standard.grade)
             )}
-            chipValues={...formState.grade}
+            chipValues={formState.grade}
             setChipValues={(newValue) => {
               setFormState({...formState, grade: newValue})
               return newValue
@@ -102,7 +102,7 @@ export default function Home({ standards }) {
             options={_.uniq(
               _.map(standards, (standard) => standard.gle)
             )}
-            chipValues={...formState.gle}
+            chipValues={formState.gle}
             setChipValues={(newValue) => {
               setFormState({...formState, gle: newValue})
               return newValue
