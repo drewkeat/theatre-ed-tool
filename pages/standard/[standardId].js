@@ -1,22 +1,29 @@
 import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
-import { Box, Card, Container, Table, TableRow, TableColumn, Typography } from "@mui/material";
+import { Box, Card, Container, Table, TableRow, TableColumn, Typography, List, ListItem } from "@mui/material";
 
 export default function StandardPage({standard}){
-  const {grade, domain, reference, gle, eo, iqs, tasks, vocab, ces, id, } = standard
+  const {grade, domain, reference, gle, eo, iqs, tasks, vocab, ces, id, drs_know, drs_understand, drs_do, assessableTasks } = standard
   return(
     <Container>
       <Typography variant="h2">{id}</Typography>
-      <Card elevated="2" gap="1">
+      <List>
+        <ListItem component={Typography} variant="h5">{eo}</ListItem>
+        <ListItem component={Typography} variant="h5">{domain} - {gle}</ListItem>
+      </List>
+      <Card elevated={5} gap="1">
           <Container sx={{display: "flex", flexFlow: "column", gap: "1rem"}}>
-            <Typography><Typography variant="h6">Domain:</Typography> {domain}</Typography>
-            <Typography><Typography variant="h6">Grade Level Expectation:</Typography> {gle}</Typography>
-            <Typography><Typography variant="h6">Colorado Essential Skills:</Typography> {ces}</Typography>
-            <Typography><Typography variant="h6">Evidence Outcome:</Typography> {eo}</Typography>
-            <Typography><Typography variant="h6">Inquiry Questions:</Typography> {iqs}</Typography>
-            <Typography><Typography variant="h6">Sample Tasks:</Typography> {tasks}</Typography>
-            <Typography><Typography variant="h6">Sample Vocabulary:</Typography> {vocab}</Typography>
+            <Typography variant="h6">Colorado Essential Skills:</Typography><Typography> {ces}</Typography>
+            <Typography variant="h6">Evidence Outcome:</Typography><Typography> {eo}</Typography>
+            <Typography variant="h6">Inquiry Questions:</Typography><Typography> {iqs}</Typography>
+            <Typography variant="h6">Sample Tasks:</Typography><Typography> {tasks}</Typography>
+            <Typography variant="h5">Students will: (Know/Understand/Do)</Typography>
+              <Typography variant="h6">Know:</Typography><Typography> {drs_know}</Typography>
+              <Typography variant="h6">Understand:</Typography><Typography> {drs_understand}</Typography>
+              <Typography variant="h6">Do:</Typography><Typography> {drs_do}</Typography>
+            <Typography variant="h6">Assessable Tasks:</Typography>
+            <List>{assessableTasks.split("\n").map(task => <ListItem key={task}>{task}</ListItem>)}</List>
 
           </Container>
       </Card>
