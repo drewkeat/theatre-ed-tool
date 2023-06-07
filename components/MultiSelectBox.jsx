@@ -4,7 +4,7 @@ import {FormControl, FormLabel, Autocomplete, TextField} from '@mui/material'
 export default function MultiSelectBox({id, labelText, helpText, chipValues, setChipValues, options}) {
 
   return (
-    <FormControl id={id+"control"} fullWidth>
+    <FormControl id={`${id}-control`} fullWidth>
       <FormLabel>{labelText}</FormLabel>
       <Autocomplete
         multiple
@@ -17,7 +17,7 @@ export default function MultiSelectBox({id, labelText, helpText, chipValues, set
         renderInput={(params) => (
           <TextField {...params} label={helpText} />
         )}
-      />
+      ></Autocomplete>
     </FormControl>
   );
 }
