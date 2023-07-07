@@ -23,11 +23,11 @@ export default function GradeContainer({grade, standards}) {
       component={Container}
       bgcolor={`${gradeColors[grade]}.main`}
       sx={{
-        // ...gradeStyles[grade],
         display: "flex",
         flexFlow: "column",
         gap: "1rem",
-        margin: "1rem"
+        margin: "1rem",
+        paddingBottom: "1rem"
       }}
     >
     <Typography variant="h3">Grade: {grade}</Typography>
