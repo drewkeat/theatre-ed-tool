@@ -3,10 +3,19 @@ import path from 'path';
 import _ from 'lodash';
 import { Box, Card, Container, Table, TableRow, TableColumn, Typography, List, ListItem } from "@mui/material";
 
+const gradeColors = {
+  "6": "sixth",
+  "7": "seventh",
+  "8": "eighth",
+  "HS Fund": "hsfund",
+  "HS Adv": "hsadv",
+  "HS Pro": "hspro"
+}
+
 export default function StandardPage({standard}){
   const {grade, domain, reference, gle, eo, iqs, tasks, vocab, ces, id, drs_know, drs_understand, drs_do, assessableTasks } = standard
   return(
-    <Container>
+    <Box component={Container} bgcolor={`${gradeColors[grade]}.main`}>
       <Typography variant="h2">{id}</Typography>
       <List>
         <ListItem component={Typography} variant="h5">{eo}</ListItem>
@@ -27,12 +36,12 @@ export default function StandardPage({standard}){
 
           </Container>
       </Card>
-    </Container>
+    </Box>
   )
 }
 
 export function getServerSideProps(context){
-  const standardId = context.params.standardId
+  const standardId = decodeURI(context.params.standardId)
   const standardsPath = path.join(process.cwd(), "standards.json");
   const standards = JSON.parse(fs.readFileSync(standardsPath));
   const standard = standards[standardId];

@@ -1,15 +1,15 @@
 import _ from "lodash";
 
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import StandardCard from "./StandardCard";
 
-const gradeStyles = {
-  "6": {background: "#D9D9D9", color: "black"},
-  "7": {background: "#FFE599", color: "black"},
-  "8": {background: "#B7D7A8", color: "black"},
-  "HS Fund": {background: "#A4C2F4", color: "black"},
-  "HS Adv": {background: "#B4A7D6", color: "black"},
-  "HS Pro": {background: "#EA9999", color: "black"},
+const gradeColors = {
+  "6": "sixth",
+  "7": "seventh",
+  "8": "eighth",
+  "HS Fund": "hsfund",
+  "HS Adv": "hsadv",
+  "HS Pro": "hspro"
 }
 
 export default function GradeContainer({grade, standards}) {
@@ -19,9 +19,11 @@ export default function GradeContainer({grade, standards}) {
     ))};
 
   return (
-    <Container
+    <Box
+      component={Container}
+      bgcolor={`${gradeColors[grade]}.main`}
       sx={{
-        ...gradeStyles[grade],
+        // ...gradeStyles[grade],
         display: "flex",
         flexFlow: "column",
         gap: "1rem",
@@ -30,6 +32,6 @@ export default function GradeContainer({grade, standards}) {
     >
     <Typography variant="h3">Grade: {grade}</Typography>
       {listStandards()}
-    </Container>
+    </Box>
   );
 }

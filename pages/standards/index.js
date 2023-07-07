@@ -1,13 +1,12 @@
 import fs from "fs";
 import path from "path";
 import _ from "lodash";
-
-import SelectBox from "../../components/MultiSelectBox";
-
+import { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 
-import { useState, useEffect } from "react";
-import GradeContainer from "../../components/GradeContainer";
+
+import SelectBox from "../../components/MultiSelectBox";
+import GradeContainer from "../../components/standards/GradeContainer";
 
 export default function StandardsIndex({ standards }) {
   const [formState, setFormState] = useState({
