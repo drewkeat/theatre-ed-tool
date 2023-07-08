@@ -14,7 +14,7 @@ export default function LogIn({swapForm}) {
   // };
 
   const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
+    fetch("/api/session", {method: "POST", body: JSON.stringify({...values, form: "login"})})
   }
 
   const validationSchema = yup.object({

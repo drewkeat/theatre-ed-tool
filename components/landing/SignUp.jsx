@@ -4,7 +4,9 @@ import * as yup from "yup"
 
 export default function SignUp({swapForm}) {
   const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2))
+    fetch("/api/session", {method: "POST", body: JSON.stringify({...values, form: "signup"})})
+      .then(res => res.json())
+      .then(data => console.log(data))
   };
 
   const validationSchema = yup.object({
