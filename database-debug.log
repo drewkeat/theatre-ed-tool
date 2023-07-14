@@ -1,0 +1,20 @@
+22:32:59.320 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+22:32:59.411 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+22:33:02.910 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - curriculum-tool-2-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 83ms, init: 0ms
+22:33:02.958 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace curriculum-tool-2-default-rtdb status Active to Active
+22:33:38.666 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace curriculum-tool-2, but the emulator is configured for curriculum-tool-2-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+22:33:38.677 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - curriculum-tool-2 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+22:34:17.490 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace curriculum-tool-e63de-default-rtdb, but the emulator is configured for curriculum-tool-2-default-rtdb,curriculum-tool-2. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+22:34:17.492 [NamespaceSystem-akka.actor.default-dispatcher-9] INFO com.firebase.core.namespace.NamespaceActor - curriculum-tool-e63de-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+22:35:36.394 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+22:35:36.410 [NamespaceSystem-akka.actor.default-dispatcher-12] INFO com.firebase.core.namespace.Terminator$Terminator - 3 actors left to terminate: curriculum-tool-2, curriculum-tool-2-default-rtdb, curriculum-tool-e63de-default-rtdb
+22:35:36.415 [NamespaceSystem-akka.actor.default-dispatcher-12] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for curriculum-tool-2-default-rtdb
+22:35:36.415 [NamespaceSystem-akka.actor.default-dispatcher-8] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for curriculum-tool-2
+22:35:36.415 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for curriculum-tool-e63de-default-rtdb
+22:35:36.419 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
