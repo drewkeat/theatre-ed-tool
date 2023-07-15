@@ -9,7 +9,6 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LogIn from '../components/landing/LogIn'
 import SignUp from '../components/landing/SignUp'
-import Copyright from '../components/layout/Copyright'
 
 export default function Landing() {
   const [formType, setFormType] = useState("login")
@@ -31,7 +30,6 @@ export default function Landing() {
         </Typography>
         {formType === 'login' ? <LogIn swapForm={setFormType}/> : <SignUp swapForm={setFormType}/>}
       </Box>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
   );
 }

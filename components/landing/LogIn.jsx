@@ -1,18 +1,8 @@
-import {Box, Checkbox, TextField, FormControlLabel, Button, Grid, Link} from "@mui/material"
+import {Box, TextField, Button, Grid, Link} from "@mui/material"
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 export default function LogIn({swapForm}) {
-  //Submit function
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
-
   const handleSubmit = (values) => {
     fetch("/api/session", {method: "POST", body: JSON.stringify({...values, form: "login"})})
   }

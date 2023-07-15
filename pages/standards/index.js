@@ -7,7 +7,6 @@ import {Container} from "@mui/material";
 
 import SelectBox from "../../components/MultiSelectBox";
 import GradeContainer from "../../components/standards/GradeContainer";
-import Copyright from "../../components/layout/Copyright"
 
 export default function StandardsIndex({ standards }) {
   const [formState, setFormState] = useState({
@@ -87,7 +86,6 @@ export default function StandardsIndex({ standards }) {
       <Container sx={{ display: "flex", flexDirection: "column" }}>
         {createGradeContainers()}
       </Container>
-      <Copyright />
     </Container>
   );
 }

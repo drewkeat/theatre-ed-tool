@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
 import { Box, Card, Container, Table, TableRow, TableColumn, Typography, List, ListItem } from "@mui/material";
-import Copyright from "../../components/layout/Copyright"
 
 const gradeColors = {
   "6": "sixth",
@@ -37,7 +36,6 @@ export default function StandardPage({standard}){
 
           </Container>
       </Card>
-      <Copyright />
     </Box>
   )
 }
