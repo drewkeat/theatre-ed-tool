@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  pgdb:
+    image: postgres
+    tty: true
+    ports:
+      - "6543:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
