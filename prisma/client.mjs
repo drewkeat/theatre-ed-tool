@@ -27,6 +27,7 @@ const xprisma = new PrismaClient().$extends({
 
       async login({email, password}) {
         const {passwordDigest, ...user} = await xprisma.user.getByEmail(email);
+        debugger
         const valid = await bcrypt.compare(password, passwordDigest)
         if(!!valid){return user}
         return("Invalid Login")

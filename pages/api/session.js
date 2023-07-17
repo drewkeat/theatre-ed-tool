@@ -1,4 +1,4 @@
-import xprisma from "../../prisma/client.js"
+import xprisma from "../../prisma/client.mjs"
 
 export default async function handler(req, res) {
   const data = JSON.parse(req.body)

@@ -15,5 +15,12 @@ model User {
   firstName String
   lastName String
   email String @unique
+  role Role @default(Initial)
   passwordDigest String
+}
+
+enum Role {
+  Initial
+  Intermediate
+  Admin
 }
