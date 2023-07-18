@@ -21,7 +21,7 @@ export default function StandardCard({standard}){
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={() => {router.push(`/standard/${id}`)}}>
+        <Button size="small" color="primary" onClick={() => {router.push(`/standards/${id}`)}}>
           View Details
         </Button>
       </CardActions>
