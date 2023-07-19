@@ -1,25 +1,16 @@
 import { Box, Grid } from "@mui/material";
-import AudiotrackIcon from "@mui/icons-material/Audiotrack"
+import { useContext } from "react";
 
+import NotificationContext from "../../contexts/notificationContext";
 import Copyright from "./Copyright";
 import NotificationBanner from "./NotificationBanner";
 
-const notificationProps = {
-  notification: {
-    title: "Test Title",
-    message: "This is the test message.",
-    type: "success"
-  },
-  actionIcon: <AudiotrackIcon />,
-  actionHandler: function(){
-    alert("Action Works")
-  }
-}
-
 export default function Layout({children}){
+  const notificationCtx = useContext(NotificationContext)
+
   return(
     <Box>
-      <NotificationBanner {...notificationProps}/>
+      {!!notificationCtx.notification && <NotificationBanner {...notificationCtx.notification}/>}
       <Grid>
         {children}
         <Box component={Copyright} alignSelf={'end'}/>
